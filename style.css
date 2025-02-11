@@ -3,15 +3,16 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
-  color: #333;
+  background: #000;
+  color: #ff0000;
 }
 
 header {
-  background: #007bff;
+  background: #ff0000;
   color: white;
   padding: 20px 0;
   text-align: center;
+  border-radius: 15px;
 }
 
 header h1 {
@@ -39,22 +40,35 @@ section {
   padding: 20px;
   margin: 20px auto;
   max-width: 800px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #111;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.5);
 }
 
 h2 {
-  color: #007bff;
+  color: #ff0000;
 }
 
 footer {
   text-align: center;
   padding: 10px;
-  background: #333;
+  background: #111;
   color: white;
   position: relative;
   bottom: 0;
   width: 100%;
+  border-radius: 15px;
 }
 
+.photo-gallery {
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px 0;
+}
+
+.photo-gallery img {
+  height: 200px;
+  margin-right: 10px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.5);
+}
