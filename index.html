@@ -1,54 +1,130 @@
 <!DOCTYPE html>  
 <html lang="pt-br">  
 <head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>Para meu amor Larissa</title>  
-  <link rel="stylesheet" href="style.css">  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Para meu amor Larissa</title>  
+    <style>  
+        body {  
+            font-family: 'Arial', sans-serif;  
+            background-color: #000;  
+            color: #fff;  
+            margin: 0;  
+            padding: 0;  
+            line-height: 1.6;  
+        }  
+
+        .container {  
+            max-width: 1200px;  
+            margin: 0 auto;  
+            padding: 20px;  
+        }  
+
+        header {  
+            background: linear-gradient(to right, #8b0000, #ff3366);  
+            color: white;  
+            text-align: center;  
+            padding: 20px 0;  
+        }  
+
+        .gallery-container {  
+            position: relative;  
+            width: 100%;  
+            overflow: hidden;  
+        }  
+
+        .photo-gallery {  
+            display: flex;  
+            transition: transform 0.5s ease;  
+            gap: 20px;  
+        }  
+
+        .photo-gallery img {  
+            width: 300px;  
+            height: 250px;  
+            object-fit: cover;  
+            border-radius: 15px;  
+            box-shadow: 0 4px 8px rgba(255,51,102,0.5);  
+        }  
+
+        .scroll-buttons {  
+            display: flex;  
+            justify-content: center;  
+            margin-top: 20px;  
+        }  
+
+        .scroll-btn {  
+            background-color: #ff3366;  
+            color: white;  
+            border: none;  
+            padding: 10px 20px;  
+            margin: 0 10px;  
+            cursor: pointer;  
+            border-radius: 5px;  
+        }  
+
+        .love-section {  
+            text-align: center;  
+            margin-top: 30px;  
+            padding: 20px;  
+            background-color: rgba(255,51,102,0.2);  
+        }  
+
+        .love-text {  
+            font-size: 1.5rem;  
+            color: #ff6699;  
+        }  
+    </style>  
 </head>  
 <body>  
-  <header>  
-    <h1>Para meu amor Larissa</h1>  
-    <nav>  
-      <ul>  
-        <li><a href="#nossa-historia">Nossa História</a></li>  
-        <li><a href="#galeria">Momentos Especiais</a></li>  
-        <li><a href="#declaracao">Declaração de Amor</a></li>  
-      </ul>  
-    </nav>  
-  </header>  
+    <header>  
+        <h1>Para meu amor Larissa</h1>  
+    </header>  
 
-  <section id="nossa-historia">  
-    <h2>Nossa História</h2>  
-    <p>Cada momento ao seu lado é uma bênção. Você ilumina meus dias e aquece meu coração.</p>  
-  </section>  
+    <div class="container">  
+        <div class="gallery-container">  
+            <div class="photo-gallery" id="photoGallery">  
+                <img src="images/foto1.jpg" alt="Momento 1">  
+                <img src="images/foto2.jpg" alt="Momento 2">  
+                <img src="images/foto3.jpg" alt="Momento 3">  
+                <img src="images/foto4.jpg" alt="Momento 4">  
+            </div>  
+        </div>  
 
-  <section id="galeria">  
-    <h2>Momentos Especiais</h2>  
-    <div class="gallery-container">  
-      <button class="nav-btn nav-left">&lt;</button>  
-      <div class="photo-gallery">  
-        <img src="foto1.jpg" alt="Momento Especial 1">  
-        <img src="foto2.jpg" alt="Momento Especial 2">  
-        <img src="foto3.jpg" alt="Momento Especial 3">  
-        <img src="foto4.jpg" alt="Momento Especial 4">  
-      </div>  
-      <button class="nav-btn nav-right">&gt;</button>  
+        <div class="scroll-buttons">  
+            <button class="scroll-btn" id="prevBtn">Anterior</button>  
+            <button class="scroll-btn" id="nextBtn">Próximo</button>  
+        </div>  
+
+        <div class="love-section">  
+            <h2 class="love-text">Larissa, eu te amo infinitamente!</h2>  
+        </div>  
     </div>  
-  </section>  
 
-  <section id="declaracao">  
-    <h2>Declaração de Amor</h2>  
-    <p class="love-text">Larissa, eu te amo mais do que palavras podem expressar.   
-    Você é minha melhor amiga, meu amor, minha companheira de vida.   
-    Cada dia ao seu lado é um presente.</p>  
-    <h3 class="big-love">EU TE AMO MUITO!</h3>  
-  </section>  
+    <script>  
+        document.addEventListener('DOMContentLoaded', function() {  
+            const gallery = document.getElementById('photoGallery');  
+            const prevBtn = document.getElementById('prevBtn');  
+            const nextBtn = document.getElementById('nextBtn');  
+            
+            let currentIndex = 0;  
+            const images = gallery.querySelectorAll('img');  
+            const imageWidth = images[0].offsetWidth + 20; // Largura + gap  
 
-  <footer>  
-    <p>&copy; 2025 Nosso Amor. Todos os direitos reservados.</p>  
-  </footer>  
+            nextBtn.addEventListener('click', () => {  
+                if (currentIndex < images.length - 1) {  
+                    currentIndex++;  
+                    gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`;  
+                }  
+            });  
 
-  <script src="script.js"></script>  
+            prevBtn.addEventListener('click', () => {  
+                if (currentIndex > 0) {  
+                    currentIndex--;  
+                    gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`;  
+                }  
+            });  
+        });  
+    </script>  
 </body>  
 </html>
