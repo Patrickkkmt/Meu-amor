@@ -1,19 +1,25 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const contatoSection = document.querySelector('#contato');
-  const btnMensagem = document.createElement('button');
+document.addEventListener('DOMContentLoaded', function() {  
+  const gallery = document.querySelector('.photo-gallery');  
+  const leftBtn = document.querySelector('.nav-left');  
+  const rightBtn = document.querySelector('.nav-right');  
   
-  btnMensagem.textContent = 'Clique para dizer Olá!';
-  btnMensagem.style.padding = '10px 20px';
-  btnMensagem.style.backgroundColor = '#007bff';
-  btnMensagem.style.color = 'white';
-  btnMensagem.style.border = 'none';
-  btnMensagem.style.borderRadius = '5px';
-  btnMensagem.style.cursor = 'pointer';
-  btnMensagem.style.marginTop = '10px';
+  let currentScroll = 0;  
+  const scrollAmount = 300;  
 
-  btnMensagem.addEventListener('click', function() {
-    alert('Olá! Obrigado por visitar meu site! 😊');
-  });
+  rightBtn.addEventListener('click', function() {  
+    currentScroll += scrollAmount;  
+    gallery.scrollTo({  
+      left: currentScroll,  
+      behavior: 'smooth'  
+    });  
+  });  
 
-  contatoSection.appendChild(btnMensagem);
+  leftBtn.addEventListener('click', function() {  
+    currentScroll -= scrollAmount;  
+    if (currentScroll < 0) currentScroll = 0;  
+    gallery.scrollTo({  
+      left: currentScroll,  
+      behavior: 'smooth'  
+    });  
+  });  
 });
