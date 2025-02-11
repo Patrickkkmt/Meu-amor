@@ -1,130 +1,51 @@
-<!DOCTYPE html>  
-<html lang="pt-br">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Para meu amor Larissa</title>  
-    <style>  
-        body {  
-            font-family: 'Arial', sans-serif;  
-            background-color: #000;  
-            color: #fff;  
-            margin: 0;  
-            padding: 0;  
-            line-height: 1.6;  
-        }  
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Site Romântico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Bem-vindo ao Meu Site Romântico</h1>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#galeria">Galeria de Fotos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        .container {  
-            max-width: 1200px;  
-            margin: 0 auto;  
-            padding: 20px;  
-        }  
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Olá! Este é um espaço especial, onde compartilho um pouco de mim e momentos marcantes através de fotos e histórias.</p>
+  </section>
 
-        header {  
-            background: linear-gradient(to right, #8b0000, #ff3366);  
-            color: white;  
-            text-align: center;  
-            padding: 20px 0;  
-        }  
+  <section id="galeria">
+    <h2>Galeria de Fotos</h2>
+    <div class="photo-gallery">
+      <img src="https://via.placeholder.com/300x200" alt="Foto 1">
+      <img src="https://via.placeholder.com/300x200" alt="Foto 2">
+      <img src="https://via.placeholder.com/300x200" alt="Foto 3">
+      <img src="https://via.placeholder.com/300x200" alt="Foto 4">
+    </div>
+  </section>
 
-        .gallery-container {  
-            position: relative;  
-            width: 100%;  
-            overflow: hidden;  
-        }  
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Você pode me encontrar em:</p>
+    <ul>
+      <li>Email: <a href="mailto:email@exemplo.com">email@exemplo.com</a></li>
+      <li>GitHub: <a href="https://github.com/seu-usuario" target="_blank">github.com/seu-usuario</a></li>
+    </ul>
+  </section>
 
-        .photo-gallery {  
-            display: flex;  
-            transition: transform 0.5s ease;  
-            gap: 20px;  
-        }  
+  <footer>
+    <p>&copy; 2025 Meu Site Romântico. Todos os direitos reservados.</p>
+  </footer>
 
-        .photo-gallery img {  
-            width: 300px;  
-            height: 250px;  
-            object-fit: cover;  
-            border-radius: 15px;  
-            box-shadow: 0 4px 8px rgba(255,51,102,0.5);  
-        }  
-
-        .scroll-buttons {  
-            display: flex;  
-            justify-content: center;  
-            margin-top: 20px;  
-        }  
-
-        .scroll-btn {  
-            background-color: #ff3366;  
-            color: white;  
-            border: none;  
-            padding: 10px 20px;  
-            margin: 0 10px;  
-            cursor: pointer;  
-            border-radius: 5px;  
-        }  
-
-        .love-section {  
-            text-align: center;  
-            margin-top: 30px;  
-            padding: 20px;  
-            background-color: rgba(255,51,102,0.2);  
-        }  
-
-        .love-text {  
-            font-size: 1.5rem;  
-            color: #ff6699;  
-        }  
-    </style>  
-</head>  
-<body>  
-    <header>  
-        <h1>Para meu amor Larissa</h1>  
-    </header>  
-
-    <div class="container">  
-        <div class="gallery-container">  
-            <div class="photo-gallery" id="photoGallery">  
-                <img src="images/foto1.jpg" alt="Momento 1">  
-                <img src="images/foto2.jpg" alt="Momento 2">  
-                <img src="images/foto3.jpg" alt="Momento 3">  
-                <img src="images/foto4.jpg" alt="Momento 4">  
-            </div>  
-        </div>  
-
-        <div class="scroll-buttons">  
-            <button class="scroll-btn" id="prevBtn">Anterior</button>  
-            <button class="scroll-btn" id="nextBtn">Próximo</button>  
-        </div>  
-
-        <div class="love-section">  
-            <h2 class="love-text">Larissa, eu te amo infinitamente!</h2>  
-        </div>  
-    </div>  
-
-    <script>  
-        document.addEventListener('DOMContentLoaded', function() {  
-            const gallery = document.getElementById('photoGallery');  
-            const prevBtn = document.getElementById('prevBtn');  
-            const nextBtn = document.getElementById('nextBtn');  
-            
-            let currentIndex = 0;  
-            const images = gallery.querySelectorAll('img');  
-            const imageWidth = images[0].offsetWidth + 20; // Largura + gap  
-
-            nextBtn.addEventListener('click', () => {  
-                if (currentIndex < images.length - 1) {  
-                    currentIndex++;  
-                    gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`;  
-                }  
-            });  
-
-            prevBtn.addEventListener('click', () => {  
-                if (currentIndex > 0) {  
-                    currentIndex--;  
-                    gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`;  
-                }  
-            });  
-        });  
-    </script>  
-</body>  
+  <script src="script.js"></script>
+</body>
 </html>
